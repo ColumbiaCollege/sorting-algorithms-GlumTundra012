@@ -11,6 +11,8 @@ int step =0;
 //this should be about if the array is sorted.
 boolean sorted = false;
 
+
+
 void setup() {
   //window setup
   size(1200, 900);
@@ -27,8 +29,8 @@ void setup() {
   drawRect();
 }
 
-void draw(){
-  shuffleArray();
+void draw() {
+  sorting();
   drawRect();
 }
 
@@ -39,20 +41,35 @@ void drawRect() {
   }
 }
 
-void shuffleArray(){
+//void shuffleArray(){
 
-  for (int i =0; i <numbers.length;i++){
-    int randIndex = int(random (0,numbers.length));
-    int temp = numbers[randIndex];
-    numbers[randIndex]=numbers[i];
-    numbers[i] = temp;
-  
-  }
-}
+//  for (int i =0; i <numbers.length;i++){
+//    int randIndex = int(random (0,numbers.length));
+//    int temp = numbers[randIndex];
+//    numbers[randIndex]=numbers[i];
+//    numbers[i] = temp;
 
-void sort(){
-  if numbers[i]<numbers{i+1}{
-    //continue...
+//  }
+//}
+
+void sorting() {
+  int i= 0;
+  int j =0;
+
+
+
+  for (i =0; i< numbers.length; i++) {
+    for ( j = i-1; j>=0; j --) {
+      if (numbers[i]< numbers[j]){      
+        int temp= 0;
+        temp = numbers[i];
+        numbers[i] = numbers[j];
+        numbers[j] = temp;
+      }
+      
+    }
   }
-  
+
+
+  //continue...
 }
