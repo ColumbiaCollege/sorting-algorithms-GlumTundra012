@@ -6,9 +6,7 @@ int numNumbers =20;
 int [] numbers = new int [numNumbers];
 //this is probably the width of the rectangles
 float rectWidth =1.0;
-//this probably controls what step we're at???
-int step =0;
-//this should be about if the array is sorted.
+//this is about if the array is sorted.
 boolean sorted = false;
 
 
@@ -17,7 +15,8 @@ void setup() {
   //window setup
   size(1200, 900);
   background(255);
-  frameRate(10);
+  frameRate(5);
+  
   //populate with random numbers up to the height of the screen
   for (int i =0; i <numbers.length; i++) {
     numbers[i] = int(random(height));
@@ -28,12 +27,12 @@ void setup() {
   //call drawRect
   drawRect();
 }
-
+// this is drawing my methods
 void draw() {
   sorting();
   drawRect();
 }
-
+//Thism is drawing my rect length at random
 void drawRect() {
   background(255);
   for (int i =0; i <numbers.length; i++) {
@@ -41,22 +40,11 @@ void drawRect() {
   }
 }
 
-//void shuffleArray(){
 
-//  for (int i =0; i <numbers.length;i++){
-//    int randIndex = int(random (0,numbers.length));
-//    int temp = numbers[randIndex];
-//    numbers[randIndex]=numbers[i];
-//    numbers[i] = temp;
-
-//  }
-//}
-
+//This is sorting the rectangles by compairing the length and if they are switched it goes back to the start
 void sorting() {
   int i= 0;
   int j =0;
-
-
 
   for (i =0; i< numbers.length; i++) {
     for ( j = i-1; j>=0; j --) {
@@ -69,7 +57,4 @@ void sorting() {
       
     }
   }
-
-
-  //continue...
 }
